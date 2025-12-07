@@ -33,7 +33,6 @@ const OrdersPage = () => {
         setOrders(data)
         setError(null)
 
-        // Seed rating selections from user rating on order or live product rating (default 5)
         const initial = { ...ratings }
         await Promise.all(
           data.map(async (order) => {

@@ -44,7 +44,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const data = await getUserProfile(uid)
       if (!data) {
-        // If profile missing (e.g., first-time Google login), create a default doc
         await ensureUserDocument(
           {
             uid,

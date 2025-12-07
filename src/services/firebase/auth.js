@@ -63,7 +63,6 @@ export const loginWithEmail = async ({ email, password }) => {
     const cred = await signInWithEmailAndPassword(auth, email, password)
     await reload(cred.user)
 
-    // Enforce email verification
     const profile = await getUserProfile(cred.user.uid)
     const isVerified = cred.user.emailVerified || profile?.isVerified
     const isActive = profile?.isActive ?? true

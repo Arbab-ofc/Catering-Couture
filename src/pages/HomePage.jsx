@@ -148,7 +148,6 @@ const HomePage = () => {
   const prevSlide = () =>
     setSlide((prev) => (prev - 1 + (slides.length || 1)) % (slides.length || 1))
 
-  // autoplay
   useEffect(() => {
     if (!slides.length || paused) return
     const id = setInterval(() => {
@@ -310,7 +309,7 @@ const HomePage = () => {
                   </div>
                 </div>
               ))}
-              {/* Mobile single skeleton */}
+              {}
               <div className="w-full max-w-[360px] animate-pulse overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-bg-base/70 via-bg-elevated/70 to-bg-base/60 shadow-subtle sm:hidden">
                 <div className="aspect-[3/2] w-full bg-gradient-to-r from-bg-base via-bg-elevated to-bg-base/80" />
                 <div className="space-y-3 px-4 py-4">

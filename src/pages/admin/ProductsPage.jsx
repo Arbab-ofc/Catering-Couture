@@ -154,7 +154,6 @@ const ProductsPage = () => {
       if (sortBy === 'rating') return ratingB - ratingA
       if (sortBy === 'priceLow') return priceA - priceB
       if (sortBy === 'priceHigh') return priceB - priceA
-      // recent
       return dateB - dateA
     })
     return sorted

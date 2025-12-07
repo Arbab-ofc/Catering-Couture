@@ -32,7 +32,6 @@ export const ensureUserDocument = async (user, role = 'user', extra = {}) => {
     if (existing.exists()) {
       const data = existing.data()
       isActive = data.isActive ?? isActive
-      // once verified, keep true; otherwise honor latest flag/email state
       isVerified = data.isVerified || isVerified
       roleToSet = data.role || roleToSet
       requestedRole = data.requestedRole ?? requestedRole
@@ -85,7 +84,6 @@ export const getProduct = async (id) => {
   }
 }
 
-// Admin secret helpers
 const adminSettingsRef = doc(db, 'settings', 'admin')
 
 export const getAdminSecret = async () => {
@@ -212,7 +210,6 @@ export const deleteUserDoc = async (uid) => {
   }
 }
 
-// Product helpers
 export const createProduct = async (product) => {
   try {
     const ref = await addDoc(collection(db, 'products'), {
@@ -325,7 +322,6 @@ export const listSellerProducts = async (sellerId) => {
   }
 }
 
-// Cart helpers
 export const getCart = async (userId) => {
   try {
     const ref = doc(db, 'carts', userId)
@@ -393,7 +389,6 @@ export const updateCartItems = async (userId, items) => {
   }
 }
 
-// Orders
 export const createOrder = async (order) => {
   try {
     const ref = await addDoc(collection(db, 'orders'), {

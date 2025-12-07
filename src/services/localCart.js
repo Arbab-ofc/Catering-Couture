@@ -13,7 +13,7 @@ export const setGuestCart = (items) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items))
   } catch (e) {
-    /* ignore */
+    
   }
 }
 

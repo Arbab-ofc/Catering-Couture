@@ -15,7 +15,6 @@ export const uploadToCloudinary = async (file, folder = 'products') => {
   formData.append('file', file)
   formData.append('upload_preset', UPLOAD_PRESET)
   formData.append('folder', folder)
-  // unsigned uploads only allow a limited set of params; avoid overwrite/unique flags
 
   const endpoint = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
   try {
